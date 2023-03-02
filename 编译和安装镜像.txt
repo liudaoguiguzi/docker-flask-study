@@ -1,0 +1,5 @@
+把这个文件夹复制到linux系统里，进入这个文件夹
+docker build -t app . 
+这个是编译镜像，app是镜像命名
+docker run -d --name test --restart unless-stopped -p 4395:80 -d app:latest
+挂载编译好的镜像，容器叫test  

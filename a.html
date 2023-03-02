@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frontend-Backend Communication</title>
+</head>
+<body>
+    <h1>Frontend-Backend Communication</h1>
+    <button onclick="sendRequest()">Send Request</button>
+    <p id="response"></p>
+    <script>
+        function sendRequest() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', '/ask');
+            xhr.onload = () => {
+                document.getElementById('response').innerText = xhr.responseText;
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
